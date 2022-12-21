@@ -58,3 +58,59 @@
 
 
 }
+
+
+
+
+/* custom style */
+
+div.slick-slider{
+    height: fit-content;
+    padding: 0;
+}
+
+button.slick-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 50px;
+    height: 100%;
+    opacity: 0;
+}
+
+button.slick-arrow:hover{
+    opacity: 1;
+}
+
+
+button.slick-arrow.slick-prev{
+    left: 0;
+}
+button.slick-arrow.slick-next{
+    right: 0;
+}
+
+ul.slick-dots{
+    position: absolute;
+    bottom: 5px;
+}
+
+ul.slick-dots > li > button{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(40px);
+    border: 2px solid #fff;
+}
+
+ul.slick-dots > li > button::before{
+    display: none;
+}
+
+
+ul.slick-dots > li.slick-active > button{
+    background: #fff;
+    border: 2px solid #fff;
+}

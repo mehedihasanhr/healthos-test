@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { Inter } from '@next/font/google';
 import Layout from '../components/Layout/Layout';
+import React from 'react';
+import Hero from '../sections/Hero';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,7 +22,9 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Layout>
-                <></>
+                <React.Fragment>
+                    <Hero />
+                </React.Fragment>
             </Layout>
         </>
     );

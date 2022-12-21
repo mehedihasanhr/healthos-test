@@ -29,7 +29,7 @@ const NavSearchBox = ({ outsiteClick }: any) => {
     }, [outsiteClick]);
 
     return (
-        <div className="relative">
+        <div className="relative hidden lg:inline-block mx-5">
             <div className="flex w-full" ref={setRefEl}>
                 <div className="w-full flex items-center border border-gray-200 border-r-0 rounded-l-sm">
                     {/* category menu */}

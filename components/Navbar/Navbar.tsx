@@ -10,7 +10,7 @@ const Navbar = () => {
         <header className="w-full h-fit border-b border-slate-200">
             {/* main nav bar */}
             <div className="container">
-                <div className="h-24 flex items-center justify-between border-b border-dashed border-slate-2">
+                <div className="h-16 md:h-24 flex items-center justify-between border-b border-dashed border-slate-2">
                     <div className="flex items-center space-x-3">
                         {/* menu toggle button for mobile or tablat */}
                         <button
@@ -55,7 +55,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href="/"
-                                className="flex md:hidden text-slate-700 space-x-2 group select-none"
+                                className="flex lg:hidden text-slate-700 space-x-2 group select-none"
                             >
                                 <div className="flex items-center justify-center">
                                     <span className="text-xl sm:text-2xl mt-1 group-hover:text-blue-500">
