@@ -1,10 +1,8 @@
 import Head from 'next/head';
-import { Inter } from '@next/font/google';
 import Layout from '../components/Layout/Layout';
 import React from 'react';
 import Hero from '../sections/Hero';
-
-const inter = Inter({ subsets: ['latin'] });
+import Products from '../sections/Products';
 
 export default function Home() {
     return (
@@ -24,6 +22,10 @@ export default function Home() {
             <Layout>
                 <React.Fragment>
                     <Hero />
+                    <Products heading="Men's Fations" />
+
+                    {/* <Banner src="/banner-1.jpg" alt="banner" /> */}
+                    <Products heading="Women's Fations" />
                 </React.Fragment>
             </Layout>
         </>

@@ -37,7 +37,7 @@ const Hero = () => {
                     </div>
 
                     {/* semi banner right side */}
-                    <div className="col-span-6 md:col-span-4 row-span-1 ">
+                    <div className="col-span-6 md:col-span-4 row-span-1 mb-2">
                         <div className="relative w-full h-20 md:h-full md:min-h-full">
                             <Image
                                 src="/banner-3.jpg"
@@ -52,7 +52,7 @@ const Hero = () => {
                     </div>
 
                     {/*  */}
-                    <div className="col-span-6 md:col-span-4 row-span-1 ">
+                    <div className="col-span-6 md:col-span-4 row-span-1 mb-2">
                         <div className="relative w-full h-20 md:h-full md:min-h-full">
                             <Image
                                 src="/banner-5.jpg"
