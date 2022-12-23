@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { SelectionInput } from '../Form';
+import { Input, SelectionInput } from '../Form';
 import Quantity from '../Quantity';
 
 const SelectionIcon = () => {
@@ -17,9 +17,16 @@ const SelectionIcon = () => {
 
 const Cart = () => {
     const [quantity, setQuantity] = React.useState(1);
+    const [checked, setChecked] = React.useState(false);
+
+    const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(e.target.checked);
+        setChecked(e.target.checked);
+    };
+
     return (
         <div className="flex gap-8 py-5 border-b border-dashed mb-2">
-            <div className="py-1.5 px-2 relative bg-slate-100 flex items-center justify-center">
+            <div className="py-1.5 px-2 relative bg-slate-100 flex items-center justify-center rounded-md">
                 <div className="relative w-16 h-16">
                     <Image
                         src="/cloths/sweater-1.png"
@@ -41,8 +48,8 @@ const Cart = () => {
                     </Link>
                     <div className="text-base font-medium">
                         <span className="block">$180</span>
-                        <span className="text-[10px] text-gray-500 -mt-2 block">
-                            Dis: 30%
+                        <span className="text-[10px] text-red-500 -mt-2 block">
+                            Dis: -30%
                         </span>
                     </div>
                 </div>
@@ -54,7 +61,7 @@ const Cart = () => {
                         <span className="text-green-700 pl-2">In Stock</span>
                     </div>
                 </div>
-                <div className="w-full flex items-center justify-between">
+                <div className="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
                     <div className="flex items-center space-x-3">
                         <SelectionInput
                             renderIcon={SelectionIcon}
@@ -66,7 +73,7 @@ const Cart = () => {
                             placeholder="XL"
                             className="w-20 bg-transparent border py-1 text-sm placeholder:text-gray-500"
                             optActiveClass=""
-                            optClass="text-sm px-0 py-1 hover:bg-zinc-100"
+                            optClass="text-sm px-2 py-1 hover:bg-zinc-100"
                             onSelect={(val) => console.log(val)}
                         />
 
@@ -82,7 +89,7 @@ const Cart = () => {
                             placeholder="Blue"
                             className="w-20 bg-transparent border py-1 text-sm placeholder:text-gray-500"
                             optActiveClass=""
-                            optClass="text-sm px-0 py-1 hover:bg-zinc-100"
+                            optClass="text-sm px-2 py-1 hover:bg-zinc-100"
                             onSelect={(val) => console.log(val)}
                         />
 

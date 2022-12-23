@@ -17,6 +17,7 @@ const Dropdown = ({ children, hoverable = true }: DropdownProps) => {
     const wrapRef = React.useRef<HTMLDivElement>(null);
 
     const { styles, attributes } = usePopper(refElement, popperElement, {
+        placement: 'bottom-start',
         modifiers: dropdownModifiers.modifiers,
     });
 
@@ -57,7 +58,7 @@ const Dropdown = ({ children, hoverable = true }: DropdownProps) => {
             <div
                 ref={setPopperElement}
                 style={styles.popper}
-                className={`min-w-full z-[9999] ${
+                className={`z-[9999] ${
                     show
                         ? 'pointer-events-auto visible'
                         : 'pointer-events-none invisible'

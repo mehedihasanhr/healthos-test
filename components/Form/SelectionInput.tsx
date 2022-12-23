@@ -9,6 +9,7 @@ interface TProps {
     optActiveClass?: string;
     renderIcon?: () => React.ReactNode;
     iconClass?: string;
+    label?: string;
     onSelect: (val: string) => void;
 }
 
@@ -77,7 +78,15 @@ const SelectionInput = ({
                         setShow(!show);
                     }}
                 />
-                <span className="block absolute right-1 top-1/2 -translate-y-1/2 pointer-events-none">
+                <span
+                    className={`block absolute right-1.5 pointer-events-none
+                        ${
+                            props.label
+                                ? 'top-3/4 -translate-y-1/2'
+                                : 'top-1/2 -translate-y-1/2'
+                        }
+                    `}
+                >
                     {renderIcon ? (
                         renderIcon()
                     ) : (
