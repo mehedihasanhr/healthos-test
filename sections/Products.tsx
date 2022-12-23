@@ -35,7 +35,7 @@ const Products = ({ heading }: TProductsProps) => {
                                         index + 1
                                     } for men's fations`}
                                     alt=""
-                                    href={`/products/${index + 1}`}
+                                    href={`/product/${index + 1}`}
                                     image={`/cloths/sweater-${index + 1}.png`}
                                 />
                             </div>
@@ -51,7 +51,7 @@ const Products = ({ heading }: TProductsProps) => {
                                         index + 1
                                     } for men's fations`}
                                     alt=""
-                                    href={`/products/${index + 1}`}
+                                    href={`/product/${index + 1}`}
                                     image={`/cloths/sweater-${index + 1}.png`}
                                 />
                             </div>
@@ -67,7 +67,7 @@ const Products = ({ heading }: TProductsProps) => {
                                         index + 1
                                     } for men's fations`}
                                     alt=""
-                                    href={`/products/${index + 1}`}
+                                    href={`/product/${index + 1}`}
                                     image={`/cloths/sweater-${index + 1}.png`}
                                 />
                             </div>

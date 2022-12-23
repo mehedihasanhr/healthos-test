@@ -2,13 +2,13 @@ import * as React from 'react';
 import countryData from 'country-data';
 import { usePopper } from 'react-popper';
 import { dropdownModifiers } from '../../utils/popper';
-import clickOutside from '../HOC/withClickOutsite';
 import Input from './Input';
 import { formatPhoneNumber } from '../../utils/formatPhoneNumber';
 
 import { isValidPhoneNumber } from 'libphonenumber-js';
+import { outsiteClick } from '../../utils/outsiteClick';
 
-const PhoneNumberInput = ({ outsiteClick }: any) => {
+const PhoneNumberInput = () => {
     const [refElement, setRefElement] = React.useState<any>(null);
     const [popperElement, setPopperElement] = React.useState<any>(null);
     const [show, setShow] = React.useState(false);
@@ -16,6 +16,7 @@ const PhoneNumberInput = ({ outsiteClick }: any) => {
     const [isValid, setIsValid] = React.useState(false);
 
     const [selectedCountry, setSelectedCountry] = React.useState<any>();
+    const wrapperRef = React.useRef(null);
 
     const { styles, attributes } = usePopper(refElement, popperElement, {
         placement: 'bottom-start',
@@ -48,10 +49,10 @@ const PhoneNumberInput = ({ outsiteClick }: any) => {
     }, []);
 
     React.useEffect(() => {
-        if (outsiteClick) {
-            setShow(false);
+        if (wrapperRef) {
+            outsiteClick(wrapperRef, () => setShow(false));
         }
-    }, [outsiteClick]);
+    }, [wrapperRef]);
 
     // check if phone number is valid
 
@@ -65,7 +66,7 @@ const PhoneNumberInput = ({ outsiteClick }: any) => {
     }, [phone, selectedCountry]);
 
     return (
-        <div>
+        <div ref={wrapperRef}>
             <label
                 htmlFor="phone"
                 className="block text-sm font-medium text-gray-700 mb-3"
@@ -133,4 +134,4 @@ const PhoneNumberInput = ({ outsiteClick }: any) => {
     );
 };
 
-export default clickOutside(PhoneNumberInput);
+export default PhoneNumberInput;

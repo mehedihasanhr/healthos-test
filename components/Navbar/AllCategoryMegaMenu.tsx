@@ -1,8 +1,13 @@
 import Link from 'next/link';
 import React from 'react';
 import { allCategory } from '../../constants/categories';
+import { formatUrlString } from '../../utils/formatUrlString';
 
 export const AllCategoryMegaMenu = () => {
+    const makeLink = (link: string) => {
+        return link.toLowerCase().replace(/\s/g, '-').replace(/&/g, 'and');
+    };
+
     return (
         <div className="w-full bg-white h-full rounded-b-md drop-shadow-lg shadow-slate-200 p-5">
             {/* <div className="grid grid-cols-12 gap-8"> */}
@@ -18,7 +23,11 @@ export const AllCategoryMegaMenu = () => {
                                 {item.links.map((link, index) => (
                                     <li key={index} className="">
                                         <Link
-                                            href={link.link}
+                                            href={`/products?c=${formatUrlString(
+                                                item.header,
+                                            )}&sc=${formatUrlString(
+                                                link.label,
+                                            )}`}
                                             className="text-sm py-1 text-slate-500 hover:text-blue-500"
                                         >
                                             {link.label}

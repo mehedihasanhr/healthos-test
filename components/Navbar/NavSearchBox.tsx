@@ -2,12 +2,13 @@ import React from 'react';
 import { Input, SelectionInput } from '../Form';
 import { searchOptions } from '../../constants/searchOptions';
 import { usePopper } from 'react-popper';
-import clickOutside from '../HOC/withClickOutsite';
+import { outsiteClick } from '../../utils/outsiteClick';
 
-const NavSearchBox = ({ outsiteClick }: any) => {
+const NavSearchBox = () => {
     const [refEl, setRefEl] = React.useState<any>(null);
     const [popperEl, setPopperEl] = React.useState<any>(null);
     const [show, setShow] = React.useState(false);
+    const wrapperRef = React.useRef<HTMLDivElement>(null);
 
     const [searchText, setSearchText] = React.useState('');
     const [option, setOption] = React.useState(
@@ -25,11 +26,13 @@ const NavSearchBox = ({ outsiteClick }: any) => {
     });
 
     React.useEffect(() => {
-        if (outsiteClick) setShow(false);
-    }, [outsiteClick]);
+        if (show && wrapperRef) {
+            outsiteClick(wrapperRef, () => setShow(false));
+        }
+    }, [popperEl, show]);
 
     return (
-        <div className="relative hidden lg:inline-block mx-5">
+        <div className="relative hidden lg:inline-block mx-5" ref={wrapperRef}>
             <div className="flex w-full" ref={setRefEl}>
                 <div className="w-full flex items-center border border-gray-200 border-r-0 rounded-l-sm">
                     {/* category menu */}
@@ -78,7 +81,7 @@ const NavSearchBox = ({ outsiteClick }: any) => {
             </div>
 
             {/* suggestion menu */}
-            {!show ? null : (
+            {show ? (
                 <div
                     ref={setPopperEl}
                     style={{ ...styles.popper }}
@@ -104,9 +107,9 @@ const NavSearchBox = ({ outsiteClick }: any) => {
                         </div>
                     </div>
                 </div>
-            )}
+            ) : null}
         </div>
     );
 };
 
-export default clickOutside(NavSearchBox);
+export default NavSearchBox;

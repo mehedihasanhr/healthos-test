@@ -17,12 +17,6 @@ const SelectionIcon = () => {
 
 const Cart = () => {
     const [quantity, setQuantity] = React.useState(1);
-    const [checked, setChecked] = React.useState(false);
-
-    const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.checked);
-        setChecked(e.target.checked);
-    };
 
     return (
         <div className="flex gap-8 py-5 border-b border-dashed mb-2">

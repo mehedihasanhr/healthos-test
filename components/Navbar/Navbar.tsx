@@ -7,7 +7,7 @@ import SubNav from './SubNavbar';
 
 const Navbar = () => {
     return (
-        <header className="w-full h-fit border-b border-slate-200">
+        <div className="w-full h-fit border-b border-slate-200">
             {/* main nav bar */}
             <div className="container">
                 <div className="h-16 md:h-24 flex items-center justify-between border-b border-dashed border-slate-2">
@@ -153,7 +153,7 @@ const Navbar = () => {
 
             {/* sub nav bar */}
             <SubNav />
-        </header>
+        </div>
     );
 };
 

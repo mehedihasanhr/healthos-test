@@ -4,16 +4,16 @@ import Navbar from '../Navbar';
 import { TopNavbar } from '../Navbar/Topbar';
 const inter = Inter({ subsets: ['latin'] });
 
-type LayoutProps = { children: React.ReactNode };
+type LayoutProps = { children: React.ReactElement };
 
 const Layout = (props: LayoutProps) => {
     return (
-        <main className={inter.className}>
+        <div>
             <TopNavbar />
             <Navbar />
             <div className="flex flex-col">{props.children}</div>
             <Footer />
-        </main>
+        </div>
     );
 };
 

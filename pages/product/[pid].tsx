@@ -12,9 +12,11 @@ import ProductReviews from '../../sections/ProductReviews';
 const ProductDetail = (props: any) => {
     return (
         <Layout>
-            <ProductDetails />
-            <ProductDescription />
-            <ProductReviews />
+            <>
+                <ProductDetails />
+                <ProductDescription />
+                <ProductReviews />
+            </>
         </Layout>
     );
 };

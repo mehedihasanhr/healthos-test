@@ -79,7 +79,7 @@ export const allCategory = [
         ],
     },
     {
-        header: "Mens' Fashion",
+        header: 'Men Fashion',
         links: [
             { label: 'Clothing', link: '/' },
             { label: 'Shoes', link: '/' },
@@ -89,7 +89,7 @@ export const allCategory = [
         ],
     },
     {
-        header: "Womens' Fashion",
+        header: 'Women Fashion',
         links: [
             { label: 'Clothing', link: '/' },
             { label: 'Shoes', link: '/' },

@@ -7,7 +7,6 @@ export const MasterCard = () => {
     const [cardHolder, setCardHolder] = React.useState('');
     const [expiryDate, setExpiryDate] = React.useState('');
     const [cvv, setCvv] = React.useState('');
-    console.log(expiryDate);
 
     return (
         <div className="py-10 w-full max-w-[450px]">
