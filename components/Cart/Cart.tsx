@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { Input, SelectionInput } from '../Form';
+import { SelectionInput } from '../Form';
 import Quantity from '../Quantity';
 
 const SelectionIcon = () => {

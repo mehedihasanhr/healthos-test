@@ -5,6 +5,7 @@ export const outsiteClick = (ref: any, callback: Function) => {
         }
 
         callback();
+        document.removeEventListener('click', handleOutsiteClick);
     };
 
     document.addEventListener('click', handleOutsiteClick);

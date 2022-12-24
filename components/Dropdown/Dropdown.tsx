@@ -3,6 +3,7 @@ import { usePopper } from 'react-popper';
 import { Menu } from './Menu';
 import { Toggle } from './Toggle';
 import { dropdownModifiers } from '../../utils/popper';
+import { outsiteClick } from '../../utils/outsiteClick';
 
 interface DropdownProps {
     children: React.ReactNode[];
@@ -38,12 +39,12 @@ const Dropdown = ({ children, hoverable = true }: DropdownProps) => {
     // if hoverable, hide dropdown when mouse leave
 
     React.useEffect(() => {
-        if (wrapRef.current) {
+        if (wrapRef.current && hoverable) {
             wrapRef.current.addEventListener('mouseleave', (e) => {
                 setShow(false);
             });
         }
-    });
+    }, [wrapRef]);
 
     return (
         <div ref={wrapRef}>

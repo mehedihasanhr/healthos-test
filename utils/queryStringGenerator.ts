@@ -7,10 +7,18 @@ export const GenerateQueryString = (
 ) => {
     let queryString = '';
 
+    // check if query key is price or rating
+    if (query.key === 'price') {
+        delete paramQuery[query.key];
+    }
+
     // check if query is already exist
     // if exist then remove it from query
     // else add it to query
     if (paramQuery[query.key]) {
+        // check if query key is price or rating
+        // if yes then remove
+
         let str =
             paramQuery[query.key].replace(/\%2C/g, ',') ||
             paramQuery[query.key];
@@ -33,7 +41,9 @@ export const GenerateQueryString = (
     // generate query string
     for (let key in paramQuery) {
         if (paramQuery[key]) {
-            queryString += `${key}=${paramQuery[key]}&`;
+            const value =
+                paramQuery[key].replace(/\,/g, '%2C') || paramQuery[key];
+            queryString += `${key}=${value}&`;
         }
     }
 

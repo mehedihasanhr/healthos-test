@@ -4,7 +4,11 @@ interface rating {
     iconClassName?: string;
 }
 
-const Rating = ({ rating, className, iconClassName = 'w-4 h-4' }: rating) => {
+const Rating = ({
+    rating,
+    className = '',
+    iconClassName = 'w-4 h-4',
+}: rating) => {
     return (
         <div className={`flex items-center ${className}`}>
             {[...Array(5)].map((r, idx) =>

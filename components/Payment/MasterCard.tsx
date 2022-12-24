@@ -8,6 +8,17 @@ export const MasterCard = () => {
     const [expiryDate, setExpiryDate] = React.useState('');
     const [cvv, setCvv] = React.useState('');
 
+    const handleCardNumberInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value.replace(/\-/g, '');
+
+        // input value is not number
+        if (isNaN(Number(value))) {
+            return;
+        }
+
+        setCardNumber(value.slice(0, 16));
+    };
+
     return (
         <div className="py-10 w-full max-w-[450px]">
             <form className="grid grid-cols-12 gap-4">
@@ -27,13 +38,9 @@ export const MasterCard = () => {
                         type="text"
                         label="Card Number"
                         value={CardNumberFormate(cardNumber) || ''}
-                        placeholder="1234 567 890 1234"
+                        placeholder="1234-567-890-1234"
                         className="bg-transparent border border-zinc-200 placeholder:text-sm"
-                        onChange={(e) =>
-                            setCardNumber(
-                                e.target.value.replace(/\-/g, '').slice(0, 16),
-                            )
-                        }
+                        onChange={handleCardNumberInput}
                     />
                 </div>
 
