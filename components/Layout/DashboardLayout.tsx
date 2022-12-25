@@ -10,8 +10,8 @@ const DashboardLayout = (props: DashboardLayoutProps) => {
         <div className={inter.className}>
             <div className="flex">
                 <DashboardSidebar />
-                <div className="flex flex-col w-full">
-                    <div className="flex-1 bg-[#f6f6f6]">{props.children}</div>
+                <div className="flex flex-col h-screen overflow-y-auto w-full">
+                    <div className="flex-1">{props.children}</div>
                 </div>
             </div>
         </div>

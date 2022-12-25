@@ -6,7 +6,7 @@ import { DBSidebarLink } from './DBSidebarLink';
 
 const DashboardSidebar = () => {
     return (
-        <div className="w-full max-w-[250px] min-h-screen overflow-y-auto scrollbar bg-white  flex flex-col">
+        <div className="w-full hidden lg:flex flex-col max-w-[250px] h-screen overflow-y-auto scrollbar bg-white border-r border-dashed">
             {/* logo  */}
             <div className="h-28 flex items-center px-6 ">
                 <div className="relative w-32 h-10">
