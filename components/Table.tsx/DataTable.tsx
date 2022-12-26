@@ -41,8 +41,8 @@ const DataTable = ({
     }, [defaultColumnsChange, defaultTableData]);
 
     const table = useReactTable({
-        data: tableData,
-        columns,
+        data: tableData || [],
+        columns: columns || [],
         state: { columnVisibility, rowSelection: selectedRows },
         getCoreRowModel: getCoreRowModel(),
         onColumnVisibilityChange: setColumnVisibility,
@@ -174,9 +174,9 @@ const DataTable = ({
                 <div className="w-full border max-w-screen overflow-x-auto mt-5">
                     <table className="w-full table-auto">
                         <thead>
-                            {table.getHeaderGroups().map((headerGroup) => (
+                            {table?.getHeaderGroups()?.map((headerGroup) => (
                                 <tr key={headerGroup.id}>
-                                    {headerGroup.headers.map((header) => (
+                                    {headerGroup?.headers?.map((header) => (
                                         <th
                                             key={header.id}
                                             className="bg-slate-200 py-2 px-4 text-left"
@@ -195,7 +195,7 @@ const DataTable = ({
                         </thead>
 
                         <tbody>
-                            {table.getRowModel()?.rows?.map((row) => (
+                            {table?.getRowModel()?.rows?.map((row) => (
                                 <tr
                                     key={row.id}
                                     className="even:bg-slate-50/80 hover:bg-slate-50"

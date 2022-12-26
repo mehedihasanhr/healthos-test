@@ -31,12 +31,16 @@ const Products = (props: any) => {
                     <Tabs>
                         <Tabs.Pannel label="All Products">
                             <div className="mt-3">
-                                <DataTable
-                                    defaultColumns={ProductTableColumns}
-                                    data={ProductData}
-                                    columnVisibility={columnVisibility}
-                                    setColumnVisibility={setColumnVisibility}
-                                />
+                                {ProductData.length > 0 ? (
+                                    <DataTable
+                                        defaultColumns={ProductTableColumns}
+                                        data={ProductData}
+                                        columnVisibility={columnVisibility}
+                                        setColumnVisibility={
+                                            setColumnVisibility
+                                        }
+                                    />
+                                ) : null}
                             </div>
                         </Tabs.Pannel>
                         <Tabs.Pannel label="+Add Product">
