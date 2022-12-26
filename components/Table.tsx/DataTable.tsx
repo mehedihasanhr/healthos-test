@@ -7,7 +7,6 @@ import {
     getFilteredRowModel,
     getPaginationRowModel,
     useReactTable,
-    isRowSelected,
 } from '@tanstack/react-table';
 import Link from 'next/link';
 import { Input } from '../Form';
@@ -92,7 +91,7 @@ const DataTable = ({
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             <div className="p-4 bg-white shadow-lg rounded-md">
-                                {table.getAllLeafColumns().map((column) => {
+                                {table?.getAllLeafColumns()?.map((column) => {
                                     return (
                                         <div key={column.id} className="px-1">
                                             <label className="flex items-center gap-2">
