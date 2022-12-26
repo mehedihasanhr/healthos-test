@@ -33,7 +33,7 @@ const Products = (props: any) => {
                             <div className="mt-3">
                                 <DataTable
                                     defaultColumns={ProductTableColumns}
-                                    data={props.productsData}
+                                    data={ProductData}
                                     columnVisibility={columnVisibility}
                                     setColumnVisibility={setColumnVisibility}
                                 />
@@ -50,15 +50,3 @@ const Products = (props: any) => {
 };
 
 export default Products;
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    let res = await axios.get('/products');
-
-    let data = res.data;
-
-    return {
-        props: {
-            productsData: data,
-        },
-    };
-};
