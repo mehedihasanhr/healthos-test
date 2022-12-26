@@ -51,7 +51,7 @@ const Products = (props: any) => {
 
 export default Products;
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
     let res = await axios.get('/products');
 
     let data = res.data;
