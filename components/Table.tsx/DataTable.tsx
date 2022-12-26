@@ -16,7 +16,7 @@ import Dropdown from '../Dropdown';
 const DataTable = ({
     defaultColumns,
     data,
-    columnVisibility,
+    columnVisibility = {},
     setColumnVisibility,
 }: any) => {
     const [columns, setColumns] = React.useState<typeof defaultColumns>([

@@ -21,8 +21,6 @@ const Products = (props: any) => {
         description: false,
     });
 
-    console.log(props);
-
     return (
         <DashboardLayout>
             <div className="p-5 md:p-8">
