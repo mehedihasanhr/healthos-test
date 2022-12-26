@@ -3,7 +3,7 @@ export const dropdownModifiers = {
         {
             name: 'flip',
             options: {
-                fallbackPlacements: ['top', 'bottom'],
+                fallbackPlacements: ['top', 'bottom', 'right', 'left'],
             },
         },
     ],

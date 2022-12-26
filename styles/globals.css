@@ -11,10 +11,10 @@
         -webkit-font-smoothing: antialiased;
     }
 
-       
-
     body{
         color: #333;
+        width: 100vw;
+        min-height: 100vh;
         overflow-x: hidden
     }
 
@@ -51,6 +51,12 @@
  input[type=number] {
      -moz-appearance: textfield;
  }
+
+
+
+ 
+
+
 }
 
 
@@ -59,6 +65,21 @@
  .container{
      @apply mx-auto px-4;
  };
+
+ th,td{
+    @apply text-left text-xs md:text-sm whitespace-nowrap text-slate-600;
+ }
+ th{
+    @apply text-slate-600;
+ }
+
+ tr:hover td{
+    @apply text-slate-700;
+ }
+
+ tr:hover {
+    @apply hover:bg-black/5;
+ }
 
  .scrollbar{
     scrollbar-width: thin;

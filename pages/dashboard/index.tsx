@@ -6,7 +6,7 @@ import DashboardLayout from '../../components/Layout/DashboardLayout';
 import NewCommentNotification from '../../components/Notification/NewCommentNotification';
 import StokeOutNotification from '../../components/Notification/StokeOutNotification';
 import Rating from '../../components/Rating';
-import OrdersTable from '../../components/Table.tsx/OrdersTable';
+import OrdersTable from '../../components/Table.tsx/DataTable';
 
 const Overview = () => {
     return (
@@ -154,7 +154,7 @@ const Overview = () => {
                                     View All
                                 </Link>
                             </div>
-                            <OrdersTable />
+                            {/* <OrdersTable /> */}
                         </div>
                     </div>
                 </div>
