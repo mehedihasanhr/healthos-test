@@ -20,14 +20,22 @@ const DataTable = ({
     columnVisibility,
     setColumnVisibility,
 }: any) => {
-    const columns = React.useMemo(() => {
-        return [...defaultColumns];
-    }, [defaultColumns]);
+    // const columns = React.useMemo(() => {
+    //     return [...defaultColumns];
+    // }, [defaultColumns]);
+
+    const [columns, setColumns] = React.useState([...defaultColumns]);
 
     const [selectedRows, setSelectedRows] = React.useState({});
 
+    const defaultColumnsChange = React.useMemo(() => {
+        return defaultColumns;
+    }, [defaultColumns]);
+
     /// set default columns
-    React.useEffect(() => {}, []);
+    React.useEffect(() => {
+        setColumns([...defaultColumnsChange]);
+    }, [defaultColumnsChange]);
 
     const table = useReactTable({
         data,
