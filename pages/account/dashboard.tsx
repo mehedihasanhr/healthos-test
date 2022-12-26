@@ -31,6 +31,7 @@ const Profile = () => {
     React.useEffect(() => {
         const currentRoute = asPath.split('#')[1];
         setActiveRoute(`#${currentRoute}`);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     React.useEffect(() => {

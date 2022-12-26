@@ -1,13 +1,10 @@
 import Link from 'next/link';
 import * as React from 'react';
 import DashboardLayout from '../../components/Layout/DashboardLayout';
-
 import { orders as orderData } from '../../fakeData/orders';
-import _ from 'lodash';
 import { OrderTableColumns } from '../../components/Table.tsx/OrderTableColumns';
-import dynamic from 'next/dynamic';
-
 import DataTable from '../../components/Table.tsx/DataTable';
+import _ from 'lodash';
 
 const Orders = () => {
     const [columnVisibility, setColumnVisibility] = React.useState({

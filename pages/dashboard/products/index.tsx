@@ -9,8 +9,10 @@ import { products as ProductData } from '../../../fakeData/products';
 import Tabs from '../../../components/Tabs';
 import ProductCreateForm from '../../../sections/ProductCreateForm';
 import dynamic from 'next/dynamic';
+import { GetServerSideProps } from 'next';
+import axios from 'axios';
 
-const Products = () => {
+const Products = (props: any) => {
     const [columnVisibility, setColumnVisibility] = React.useState({
         images: false,
         color: false,
@@ -18,6 +20,8 @@ const Products = () => {
         details: false,
         description: false,
     });
+
+    console.log(props);
 
     return (
         <DashboardLayout>
@@ -31,7 +35,7 @@ const Products = () => {
                             <div className="mt-3">
                                 <DataTable
                                     defaultColumns={ProductTableColumns}
-                                    data={ProductData}
+                                    data={props.productsData}
                                     columnVisibility={columnVisibility}
                                     setColumnVisibility={setColumnVisibility}
                                 />
@@ -48,3 +52,15 @@ const Products = () => {
 };
 
 export default Products;
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    let res = await axios.get('http://localhost:3000/api/products');
+
+    let data = res.data;
+
+    return {
+        props: {
+            productsData: data,
+        },
+    };
+};

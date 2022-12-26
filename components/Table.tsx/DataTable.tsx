@@ -6,7 +6,6 @@ import {
     getFilteredRowModel,
     getPaginationRowModel,
     useReactTable,
-    ColumnFiltersState,
 } from '@tanstack/react-table';
 import Link from 'next/link';
 import { Input } from '../Form';
