@@ -6,6 +6,7 @@ import {
     getFilteredRowModel,
     getPaginationRowModel,
     useReactTable,
+    ColumnFiltersState,
 } from '@tanstack/react-table';
 import Link from 'next/link';
 import { Input } from '../Form';
@@ -24,7 +25,7 @@ const DataTable = ({
     ]);
 
     const [selectedRows, setSelectedRows] = React.useState({});
-    const [tableData, setTableData] = React.useState([...data]);
+    const [tableData, setTableData] = React.useState<typeof data>([...data]);
 
     const defaultColumnsChange = React.useMemo(() => {
         return defaultColumns;
@@ -51,6 +52,7 @@ const DataTable = ({
         onRowSelectionChange: setSelectedRows,
     });
 
+    if (data && data.length === 0) return;
     return (
         <div className="h-full">
             <div className="flex items-center justify-between flex-wrap gap-3 mb-3">
