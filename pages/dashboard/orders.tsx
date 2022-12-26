@@ -7,10 +7,7 @@ import _ from 'lodash';
 import { OrderTableColumns } from '../../components/Table.tsx/OrderTableColumns';
 import dynamic from 'next/dynamic';
 
-const DataTable = dynamic(
-    () => import('../../components/Table.tsx/DataTable'),
-    { ssr: false },
-);
+import DataTable from '../../components/Table.tsx/DataTable';
 
 const Orders = () => {
     const [columnVisibility, setColumnVisibility] = React.useState({

@@ -2,17 +2,13 @@ import Link from 'next/link';
 import * as React from 'react';
 
 import DashboardLayout from '../../../components/Layout/DashboardLayout';
+import DataTable from '../../../components/Table.tsx/DataTable';
 
 import { ProductTableColumns } from '../../../components/Table.tsx/ProductTableColumns';
 import { products as ProductData } from '../../../fakeData/products';
 import Tabs from '../../../components/Tabs';
 import ProductCreateForm from '../../../sections/ProductCreateForm';
 import dynamic from 'next/dynamic';
-
-const DataTable = dynamic(
-    () => import('../../../components/Table.tsx/DataTable'),
-    { ssr: false },
-);
 
 const Products = () => {
     const [columnVisibility, setColumnVisibility] = React.useState({
