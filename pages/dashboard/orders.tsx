@@ -1,12 +1,16 @@
 import Link from 'next/link';
 import * as React from 'react';
-import Dropdown from '../../components/Dropdown';
-import { SelectionInput } from '../../components/Form';
 import DashboardLayout from '../../components/Layout/DashboardLayout';
-import DataTable from '../../components/Table.tsx/DataTable';
+
 import { orders as orderData } from '../../fakeData/orders';
 import _ from 'lodash';
 import { OrderTableColumns } from '../../components/Table.tsx/OrderTableColumns';
+import dynamic from 'next/dynamic';
+
+const DataTable = dynamic(
+    () => import('../../components/Table.tsx/DataTable'),
+    { ssr: false },
+);
 
 const Orders = () => {
     const [columnVisibility, setColumnVisibility] = React.useState({
