@@ -7,6 +7,7 @@ import DataTable from '../../../components/Table.tsx/DataTable';
 import { ProductTableColumns } from '../../../components/Table.tsx/ProductTableColumns';
 import { products as ProductData } from '../../../fakeData/products';
 import Tabs from '../../../components/Tabs';
+import ProductCreateForm from '../../../sections/ProductCreateForm';
 
 const Products = () => {
     const [columnVisibility, setColumnVisibility] = React.useState({
@@ -35,8 +36,8 @@ const Products = () => {
                                 />
                             </div>
                         </Tabs.Pannel>
-                        <Tabs.Pannel label="+ Add Product">
-                            add product
+                        <Tabs.Pannel label="+Add Product">
+                            <ProductCreateForm />
                         </Tabs.Pannel>
                     </Tabs>
                 </div>
