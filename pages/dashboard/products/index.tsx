@@ -10,7 +10,7 @@ import Tabs from '../../../components/Tabs';
 import ProductCreateForm from '../../../sections/ProductCreateForm';
 import dynamic from 'next/dynamic';
 import { GetServerSideProps, GetStaticProps } from 'next';
-import axios from 'axios';
+import axios from '../../../config/axios';
 
 const Products = (props: any) => {
     const [columnVisibility, setColumnVisibility] = React.useState({
@@ -54,7 +54,7 @@ const Products = (props: any) => {
 export default Products;
 
 export const getStaticProps: GetStaticProps = async (context) => {
-    let res = await axios.get('http://localhost:3000/api/products');
+    let res = await axios.get('/products');
 
     let data = res.data;
 
