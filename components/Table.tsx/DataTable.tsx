@@ -19,7 +19,9 @@ const DataTable = ({
     columnVisibility,
     setColumnVisibility,
 }: any) => {
-    const [columns, setColumns] = React.useState([...defaultColumns]);
+    const [columns, setColumns] = React.useState<typeof defaultColumns>([
+        ...defaultColumns,
+    ]);
 
     const [selectedRows, setSelectedRows] = React.useState({});
     const [tableData, setTableData] = React.useState([...data]);
@@ -47,9 +49,6 @@ const DataTable = ({
         getFilteredRowModel: getFilteredRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
         onRowSelectionChange: setSelectedRows,
-        debugTable: true,
-        debugHeaders: true,
-        debugColumns: true,
     });
 
     return (
