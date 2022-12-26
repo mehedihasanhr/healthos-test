@@ -52,7 +52,7 @@ const DataTable = ({
         onRowSelectionChange: setSelectedRows,
     });
 
-    if (data && data.length === 0) return;
+    if (data && data.length === 0) return null;
     return (
         <div className="h-full">
             <div className="flex items-center justify-between flex-wrap gap-3 mb-3">
