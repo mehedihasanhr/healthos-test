@@ -9,7 +9,7 @@ import { products as ProductData } from '../../../fakeData/products';
 import Tabs from '../../../components/Tabs';
 import ProductCreateForm from '../../../sections/ProductCreateForm';
 import dynamic from 'next/dynamic';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetStaticProps } from 'next';
 import axios from 'axios';
 
 const Products = (props: any) => {
@@ -53,7 +53,7 @@ const Products = (props: any) => {
 
 export default Products;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
     let res = await axios.get('http://localhost:3000/api/products');
 
     let data = res.data;
