@@ -175,9 +175,9 @@ const DataTable = ({
                 <div className="w-full border max-w-screen overflow-x-auto mt-5">
                     <table className="w-full table-auto">
                         <thead>
-                            {table.getHeaderGroups()?.map((headerGroup) => (
+                            {table.getHeaderGroups().map((headerGroup) => (
                                 <tr key={headerGroup.id}>
-                                    {headerGroup.headers?.map((header) => (
+                                    {headerGroup.headers.map((header) => (
                                         <th
                                             key={header.id}
                                             className="bg-slate-200 py-2 px-4 text-left"
