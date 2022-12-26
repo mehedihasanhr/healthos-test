@@ -28,14 +28,8 @@ export const products = [
 
         tags: ['sweater 1', 'sweater 2', 'sweater 3'],
 
-        details: [
+        details:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        ],
-
-        faq: [],
     },
     {
         id: 123422,
@@ -66,14 +60,8 @@ export const products = [
 
         tags: ['sweater 1', 'sweater 2', 'sweater 3'],
 
-        details: [
+        details:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        ],
-
-        faq: [],
     },
 
     {
@@ -95,7 +83,7 @@ export const products = [
             '/cloths/sweater-3.png',
         ],
         description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            ' [],Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
         rating: 4.5,
         reviews: 100,
         brand: 'Nike',
@@ -105,14 +93,8 @@ export const products = [
 
         tags: ['sweater 1', 'sweater 2', 'sweater 3'],
 
-        details: [
+        details:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        ],
-
-        faq: [],
     },
     {
         id: 123423,
@@ -143,14 +125,8 @@ export const products = [
 
         tags: ['sweater 1', 'sweater 2', 'sweater 3'],
 
-        details: [
+        details:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        ],
-
-        faq: [],
     },
     {
         id: 2312423,
@@ -181,14 +157,8 @@ export const products = [
 
         tags: ['sweater 1', 'sweater 2', 'sweater 3'],
 
-        details: [
+        details:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        ],
-
-        faq: [],
     },
     {
         id: 234223,
@@ -219,14 +189,8 @@ export const products = [
 
         tags: ['sweater 1', 'sweater 2', 'sweater 3'],
 
-        details: [
+        details:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        ],
-
-        faq: [],
     },
 
     {
@@ -258,14 +222,8 @@ export const products = [
 
         tags: ['sweater 1', 'sweater 2', 'sweater 3'],
 
-        details: [
+        details:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        ],
-
-        faq: [],
     },
     {
         id: 2234323,
@@ -296,14 +254,8 @@ export const products = [
 
         tags: ['sweater 1', 'sweater 2', 'sweater 3'],
 
-        details: [
+        details:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        ],
-
-        faq: [],
     },
     {
         id: 234256,
@@ -334,14 +286,8 @@ export const products = [
 
         tags: ['sweater 1', 'sweater 2', 'sweater 3'],
 
-        details: [
+        details:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        ],
-
-        faq: [],
     },
     {
         id: 2134256,
@@ -372,13 +318,7 @@ export const products = [
 
         tags: ['sweater 1', 'sweater 2', 'sweater 3'],
 
-        details: [
+        details:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        ],
-
-        faq: [],
     },
 ];

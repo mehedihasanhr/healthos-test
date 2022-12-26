@@ -66,6 +66,11 @@
      @apply mx-auto px-4;
  };
 
+
+ table {
+    @apply w-full table-auto;
+ }
+
  th,td{
     @apply text-left text-xs md:text-sm whitespace-nowrap text-slate-600;
  }

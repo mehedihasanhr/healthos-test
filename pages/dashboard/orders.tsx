@@ -2,8 +2,8 @@ import Link from 'next/link';
 import * as React from 'react';
 import DashboardLayout from '../../components/Layout/DashboardLayout';
 import { orders as orderData } from '../../fakeData/orders';
-import { OrderTableColumns } from '../../components/Table.tsx/OrderTableColumns';
-import DataTable from '../../components/Table.tsx/DataTable';
+import { OrderTableColumns } from '../../components/Table/OrderTableColumns';
+import DataTable from '../../components/Table/DataTable';
 import _ from 'lodash';
 
 const Orders = () => {

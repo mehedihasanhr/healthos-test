@@ -1,24 +1,19 @@
-import Link from 'next/link';
 import * as React from 'react';
-
 import DashboardLayout from '../../../components/Layout/DashboardLayout';
-import DataTable from '../../../components/Table.tsx/DataTable';
-
-import { ProductTableColumns } from '../../../components/Table.tsx/ProductTableColumns';
 import { products as ProductData } from '../../../fakeData/products';
 import Tabs from '../../../components/Tabs';
 import ProductCreateForm from '../../../sections/ProductCreateForm';
+// import axios from '../../../config/axios';
+import axios from 'axios';
+import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
-import { GetServerSideProps, GetStaticProps } from 'next';
-import axios from '../../../config/axios';
+import DataTable from '../../../components/Table/DataTable';
+import { ProductTableColumns } from '../../../components/Table/ProductTableColumns';
 
 const Products = (props: any) => {
     const [columnVisibility, setColumnVisibility] = React.useState({
         images: false,
         color: false,
-        reviews: false,
-        details: false,
-        description: false,
     });
 
     return (
@@ -31,7 +26,9 @@ const Products = (props: any) => {
                     <Tabs>
                         <Tabs.Pannel label="All Products">
                             <div className="mt-3">
-                                {ProductData.length > 0 ? (
+                                <React.Suspense
+                                    fallback={<div>Loading...</div>}
+                                >
                                     <DataTable
                                         defaultColumns={ProductTableColumns}
                                         data={ProductData}
@@ -40,7 +37,7 @@ const Products = (props: any) => {
                                             setColumnVisibility
                                         }
                                     />
-                                ) : null}
+                                </React.Suspense>
                             </div>
                         </Tabs.Pannel>
                         <Tabs.Pannel label="+Add Product">

@@ -6,6 +6,7 @@ import _ from 'lodash';
 import Rating from '../Rating';
 import Image from 'next/image';
 import Dropdown from '../Dropdown';
+import { IndeterminateCheckbox } from './IndeterminateCheckbox';
 
 const columnHelper = createColumnHelper<typeof products[0]>();
 
@@ -227,29 +228,3 @@ export const ProductTableColumns = [
         ),
     },
 ];
-
-// IndeterminateCheckbox
-
-const IndeterminateCheckbox = ({
-    indeterminate,
-    className = '',
-    ...rest
-}: { indeterminate?: boolean } & React.HTMLProps<HTMLInputElement>) => {
-    const ref = React.useRef<HTMLInputElement>(null!);
-
-    React.useEffect(() => {
-        if (typeof indeterminate === 'boolean') {
-            ref.current.indeterminate = !rest.checked && indeterminate;
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [ref, indeterminate]);
-
-    return (
-        <input
-            type="checkbox"
-            ref={ref}
-            className={className + ' cursor-pointer'}
-            {...rest}
-        />
-    );
-};

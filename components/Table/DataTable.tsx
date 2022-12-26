@@ -41,15 +41,20 @@ const DataTable = ({
     }, [defaultColumnsChange, defaultTableData]);
 
     const table = useReactTable({
-        data: tableData || [],
-        columns: columns || [],
-        state: { columnVisibility, rowSelection: selectedRows },
+        data: tableData,
+        columns: columns,
+        state: {
+            columnVisibility,
+            rowSelection: selectedRows,
+        },
         getCoreRowModel: getCoreRowModel(),
         onColumnVisibilityChange: setColumnVisibility,
         getFilteredRowModel: getFilteredRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
         onRowSelectionChange: setSelectedRows,
     });
+
+    if (!table) return null;
 
     return (
         <div className="h-full">
