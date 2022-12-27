@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
-import DashboardLayout from '../../../components/Layout/DashboardLayout';
-import ProductCreateForm from '../../../sections/ProductCreateForm';
+import DashboardLayout from '../../../../components/Layout/DashboardLayout';
+import ProductCreateForm from '../../../../sections/ProductCreateForm';
 import { useRouter } from 'next/router';
 
 const Add = () => {

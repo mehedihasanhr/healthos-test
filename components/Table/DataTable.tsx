@@ -57,7 +57,7 @@ const DataTable = ({
     if (!table) return null;
 
     return (
-        <div className="h-full">
+        <div className="h-fit">
             <div className="flex items-center justify-between flex-wrap gap-3 mb-3">
                 <div className="w-full max-w-[250px]">
                     <Input
@@ -176,50 +176,57 @@ const DataTable = ({
 
             {/* data table */}
             <div>
-                <div className="w-full border max-w-screen overflow-x-auto mt-5">
-                    <table className="w-full table-auto">
-                        <thead>
-                            {table?.getHeaderGroups()?.map((headerGroup) => (
-                                <tr key={headerGroup.id}>
-                                    {headerGroup?.headers?.map((header) => (
-                                        <th
-                                            key={header.id}
-                                            className="bg-slate-200 py-2 px-4 text-left"
-                                        >
-                                            {header.isPlaceholder
-                                                ? null
-                                                : flexRender(
-                                                      header.column.columnDef
-                                                          .header,
-                                                      header.getContext(),
-                                                  )}
-                                        </th>
-                                    ))}
-                                </tr>
-                            ))}
-                        </thead>
-
-                        <tbody>
-                            {table?.getRowModel()?.rows?.map((row) => (
-                                <tr
-                                    key={row.id}
-                                    className="even:bg-slate-50/80 hover:bg-slate-50"
-                                >
-                                    {row.getVisibleCells()?.map((cell) => (
-                                        <td
-                                            key={cell.id}
-                                            className="py-2 px-4 text-left"
-                                        >
-                                            {flexRender(
-                                                cell.column.columnDef.cell,
-                                                cell.getContext(),
+                <div className="border max-w-screen overflow-x-auto mt-5">
+                    <div className="w-full overflow-x-auto">
+                        <table className="table-auto">
+                            <thead>
+                                {table
+                                    ?.getHeaderGroups()
+                                    ?.map((headerGroup) => (
+                                        <tr key={headerGroup.id}>
+                                            {headerGroup?.headers?.map(
+                                                (header) => (
+                                                    <th
+                                                        key={header.id}
+                                                        className="bg-slate-200 py-2 px-4 text-left"
+                                                    >
+                                                        {header.isPlaceholder
+                                                            ? null
+                                                            : flexRender(
+                                                                  header.column
+                                                                      .columnDef
+                                                                      .header,
+                                                                  header.getContext(),
+                                                              )}
+                                                    </th>
+                                                ),
                                             )}
-                                        </td>
+                                        </tr>
                                     ))}
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+
+                            <tbody>
+                                {table?.getRowModel()?.rows?.map((row) => (
+                                    <tr
+                                        key={row.id}
+                                        className="even:bg-slate-50/80 hover:bg-slate-50"
+                                    >
+                                        {row.getVisibleCells()?.map((cell) => (
+                                            <td
+                                                key={cell.id}
+                                                className="py-2 px-4 text-left"
+                                            >
+                                                {flexRender(
+                                                    cell.column.columnDef.cell,
+                                                    cell.getContext(),
+                                                )}
+                                            </td>
+                                        ))}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 

@@ -1,49 +1,43 @@
 import * as React from 'react';
 import DashboardLayout from '../../../components/Layout/DashboardLayout';
 import { products as ProductData } from '../../../fakeData/products';
-import Tabs from '../../../components/Tabs';
-import ProductCreateForm from '../../../sections/ProductCreateForm';
-// import axios from '../../../config/axios';
-import axios from 'axios';
-import { GetServerSideProps } from 'next';
-import dynamic from 'next/dynamic';
 import DataTable from '../../../components/Table/DataTable';
 import { ProductTableColumns } from '../../../components/Table/ProductTableColumns';
+import Link from 'next/link';
 
 const Products = (props: any) => {
     const [columnVisibility, setColumnVisibility] = React.useState({
-        images: false,
         color: false,
+        details: false,
+        description: false,
+        reviews: false,
+        rating: false,
     });
 
     return (
         <DashboardLayout>
             <div className="p-5 md:p-8">
                 <div className="border-b border-dashed mb-5">
-                    <h3 className="mb-2">Products Details</h3>
+                    <h3 className="mb-2">Orders Details</h3>
                 </div>
-                <div className="py-3">
-                    <Tabs>
-                        <Tabs.Pannel label="All Products">
-                            <div className="mt-3">
-                                <React.Suspense
-                                    fallback={<div>Loading...</div>}
-                                >
-                                    <DataTable
-                                        defaultColumns={ProductTableColumns}
-                                        data={ProductData}
-                                        columnVisibility={columnVisibility}
-                                        setColumnVisibility={
-                                            setColumnVisibility
-                                        }
-                                    />
-                                </React.Suspense>
-                            </div>
-                        </Tabs.Pannel>
-                        <Tabs.Pannel label="+Add Product">
-                            <ProductCreateForm />
-                        </Tabs.Pannel>
-                    </Tabs>
+                <div className="flex items-center">
+                    <div className="flex items-center justify-end  gap-2 md:gap-3 py-3">
+                        <TabLink
+                            href="/dashboard/products/add"
+                            title="+ Add Products"
+                            active={true}
+                        />
+                    </div>
+                </div>
+
+                {/* order lists */}
+                <div className="mt-3">
+                    <DataTable
+                        defaultColumns={ProductTableColumns}
+                        data={ProductData}
+                        columnVisibility={columnVisibility}
+                        setColumnVisibility={setColumnVisibility}
+                    />
                 </div>
             </div>
         </DashboardLayout>
@@ -51,3 +45,15 @@ const Products = (props: any) => {
 };
 
 export default Products;
+
+const TabLink = ({ href = '#', title = '', active = false }) => {
+    return (
+        <Link
+            href={href}
+            className={`font-medium px-3 py-1 rounded-md text-xs md:text-sm bg-blue-500 hover:bg-blue-600 text-blue-50 transition-colors ease-linear duration-200
+            }`}
+        >
+            {title}
+        </Link>
+    );
+};

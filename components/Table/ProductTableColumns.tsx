@@ -64,7 +64,9 @@ export const ProductTableColumns = [
 
     // price
     columnHelper.accessor('price', {
-        cell: (info) => <span>{info.getValue()}</span>,
+        cell: (info) => (
+            <span className="font-semibold">$ {info.getValue()}</span>
+        ),
         header: 'Price',
     }),
 
@@ -150,15 +152,8 @@ export const ProductTableColumns = [
     //tags
     columnHelper.accessor('tags', {
         cell: (info) => (
-            <div className="flex items-center gap-2 text-xs">
-                {info.getValue().map((tag, index) => (
-                    <span
-                        key={index}
-                        className="px-1 py-0.5 bg-gray-200 rounded-md"
-                    >
-                        {tag}
-                    </span>
-                ))}
+            <div className="max-w-[250px] overflow-hidden whitespace-normal gap-2 text-xs">
+                {info.getValue().join(',')}
             </div>
         ),
         header: 'Tags',

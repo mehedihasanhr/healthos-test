@@ -5,10 +5,10 @@ const TextArea: React.FC<
         React.TextareaHTMLAttributes<HTMLTextAreaElement>,
         HTMLTextAreaElement
     >
-> = ({ className, ...props }) => {
+> = ({ className = 'bg-slate-100 h-32', ...props }) => {
     return (
         <textarea
-            className={`w-full h-32 px-4  bg-slate-100 py-3 rounded-lg resize-none focus:outline-none focus:border-primary-500 ${className}`}
+            className={`w-full px-4  py-3 rounded-lg resize-none focus:outline-none focus:border-primary-500 ${className}`}
             {...props}
         />
     );

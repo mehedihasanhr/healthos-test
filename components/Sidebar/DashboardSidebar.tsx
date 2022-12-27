@@ -42,12 +42,6 @@ const DashboardSidebar = () => {
                     />
 
                     <DBSidebarLink
-                        href="/dashboard/payments"
-                        icon="fi fi-rr-credit-card"
-                        text="Payments"
-                    />
-
-                    <DBSidebarLink
                         href="/dashboard/customers"
                         icon="fi fi-rr-users-alt"
                         text="Customers"
