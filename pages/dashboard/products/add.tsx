@@ -3,6 +3,7 @@ import React from 'react';
 import DashboardLayout from '../../../components/Layout/DashboardLayout';
 import ProductCreateForm from '../../../sections/ProductCreateForm';
 import { useRouter } from 'next/router';
+import { useProducts } from '../../../hook/useProducts';
 
 const Add = () => {
     const router = useRouter();
@@ -11,6 +12,8 @@ const Add = () => {
         e.preventDefault();
         router.back();
     };
+
+    // handle form submit
 
     return (
         <DashboardLayout>

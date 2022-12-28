@@ -86,10 +86,13 @@ const ProductCreateForm = ({ editData = {} }: ProductCreateFormProps) => {
     };
 
     // handle image upload and preview image
-    const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleImageUpload = async (
+        e: React.ChangeEvent<HTMLInputElement>,
+    ) => {
         const files = e.target.files;
         if (files) {
             const images = Array.from(files);
+
             setImages((prev) => [...prev, ...images]);
             const previewImages = images.map((image) =>
                 URL.createObjectURL(image),

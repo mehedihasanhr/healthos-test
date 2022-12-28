@@ -42,10 +42,10 @@ export const ProductTableColumns = [
         header: 'ID',
     }),
 
-    // name
-    columnHelper.accessor('name', {
+    // title
+    columnHelper.accessor('title', {
         cell: (info) => <span>{info.getValue()}</span>,
-        header: 'Name',
+        header: 'Title',
     }),
 
     //images
@@ -114,6 +114,12 @@ export const ProductTableColumns = [
     columnHelper.accessor('stock', {
         cell: (info) => <span>{info.getValue()}</span>,
         header: 'Stock',
+    }),
+
+    // gender
+    columnHelper.accessor('gender', {
+        cell: (info) => <span>{info.getValue()}</span>,
+        header: 'Gender',
     }),
 
     // rating

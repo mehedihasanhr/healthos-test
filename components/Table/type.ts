@@ -1,13 +1,13 @@
 export type productType = {
     id: number;
-    name: string;
+    title: string;
     price: number;
     discount: number;
     category: {
         main: string;
         sub: string;
     };
-    gander: string;
+    gender: string;
     size: string[];
     color: string[];
     stock: number;
@@ -17,7 +17,7 @@ export type productType = {
     reviews: number;
     details: string;
     brand: string;
-    shipping: string;
+    shipping: number;
     warrenty: string;
     tags: string[];
 };
