@@ -2,10 +2,18 @@ import * as React from 'react';
 import { Input } from '../../components/Form';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Login = () => {
-    const [email, setEmail] = React.useState('');
-    const [password, setPassword] = React.useState('');
+    const [email, setEmail] = React.useState('dev@example.com');
+    const [password, setPassword] = React.useState('password');
+    const router = useRouter();
+
+    const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        router.push('/account/dashboard#orders');
+    };
+
     return (
         <>
             <Head>
@@ -64,6 +72,8 @@ const Login = () => {
 
                             <button
                                 aria-labelledby="loginButton"
+                                type="button"
+                                onClick={handleSubmit}
                                 className="mt-2 py-2 rounded-md text-white bg-blue-500 hover:bg-blue-600"
                             >
                                 Login
